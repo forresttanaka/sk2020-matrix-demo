@@ -371,7 +371,7 @@ const convertMatrixToDataTable = (matrix) => {
     const rowCategory = matrix.y.group_by[0];
     const rowSubcategory = matrix.y.group_by[1];
     matrix.y[rowCategory].buckets.forEach((rowCategoryBucket) => {
-        tableData.rows.push([{ content: rowCategoryBucket.key, style: { fontWeight: 'bold' }, colSpan:matrix.x[colCategory].buckets.length + 1 }]);
+        tableData.rows.push([{ content: rowCategoryBucket.key, style: { fontWeight: 'bold' }, colSpan: matrix.x[colCategory].buckets.length + 1 }]);
         rowCategoryBucket[rowSubcategory].buckets.forEach((rowSubcategoryBucket) => {
             const subCategoryData = Array(matrix.x[colCategory].buckets.length).fill(null);
             rowSubcategoryBucket[colCategory].buckets.forEach((cellData) => {
